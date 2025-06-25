@@ -1,5 +1,5 @@
 module.exports = {
-  "src/**/*.{ts,js,tsx,jsx}": [
+  '**/*.{ts,js,tsx,jsx}': [
     (filenames) => {
       let command = `next lint`
       for (const file of filenames) {
@@ -7,6 +7,6 @@ module.exports = {
       }
       return command
     },
-    "prettier --write"
+    'prettier --write'
   ]
 }
