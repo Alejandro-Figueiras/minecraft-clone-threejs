@@ -8,15 +8,20 @@ import Player from './Player'
 
 const Game = () => {
   return (
-    <Canvas className='h-dvh w-full'>
-      <Sky />
-      <ambientLight intensity={0.8} />
-      <FirstPointView />
-      <Physics>
-        <Player />
-        <Ground />
-      </Physics>
-    </Canvas>
+    <div className='relative h-dvh'>
+      <Canvas className='h-dvh w-full'>
+        <Sky />
+        <ambientLight intensity={0.8} />
+        <FirstPointView />
+        <Physics>
+          <Player />
+          <Ground />
+        </Physics>
+      </Canvas>
+      <div className='absolute top-[50%] left-[50%] z-40 translate-0.5 text-4xl'>
+        +
+      </div>
+    </div>
   )
 }
 
