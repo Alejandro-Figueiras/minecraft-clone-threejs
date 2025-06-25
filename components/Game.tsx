@@ -4,6 +4,7 @@ import { Canvas } from '@react-three/fiber'
 import React from 'react'
 import Ground from './Ground'
 import FirstPointView from './FirstPointView'
+import Player from './Player'
 
 const Game = () => {
   return (
@@ -12,6 +13,7 @@ const Game = () => {
       <ambientLight intensity={0.8} />
       <FirstPointView />
       <Physics>
+        <Player />
         <Ground />
       </Physics>
     </Canvas>
