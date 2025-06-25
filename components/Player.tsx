@@ -5,7 +5,7 @@ import React, { useEffect, useRef } from 'react'
 import { Vector3 } from 'three'
 
 const Player = () => {
-  const { moveForward, moveBackward, moveLeft, moveRight } = useKeyboard()
+  const { moveForward, moveBackward, moveLeft, moveRight, jump } = useKeyboard()
   const { camera } = useThree()
   const [ref, api] = useSphere(() => ({
     mass: 1,
@@ -47,9 +47,13 @@ const Player = () => {
     direction
       .subVectors(frontVector, sideVector)
       .normalize()
-      .multiplyScalar(5)
+      .multiplyScalar(2)
       .applyEuler(camera.rotation)
     api.velocity.set(direction.x, vel.current[1], direction.z)
+
+    if (jump && Math.abs(vel.current[1]) < 0.05) {
+      api.velocity.set(vel.current[0], 5, vel.current[2])
+    }
   })
 
   return <mesh ref={ref} />
