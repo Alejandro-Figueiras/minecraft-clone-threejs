@@ -5,6 +5,7 @@ import React from 'react'
 import Ground from './Ground'
 import FirstPointView from './FirstPointView'
 import Player from './Player'
+import { Cubes } from './Cubes'
 
 const Game = () => {
   return (
@@ -16,6 +17,7 @@ const Game = () => {
         <Physics>
           <Player />
           <Ground />
+          <Cubes />
         </Physics>
       </Canvas>
       <div className='absolute top-[50%] left-[50%] z-40 translate-0.5 text-4xl'>

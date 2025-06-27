@@ -13,10 +13,12 @@
     "@react-three/cannon": "^6.6.0",
     "@react-three/drei": "^10.3.0",
     "@react-three/fiber": "^9.1.2",
+    "nanoid": "^5.1.5",
     "next": "15.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "three": "^0.177.0"
+    "three": "^0.177.0",
+    "zustand": "^5.0.6"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
