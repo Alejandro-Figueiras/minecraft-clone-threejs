@@ -11,10 +11,12 @@ export type Cube = {
 export type Store = {
   texture: string
   cubes: Cube[]
+  addCube: (x: number, y: number, z: number) => void
+  removeCube: (x: number, y: number, z: number) => void
 }
 
-export const useStore = create<Store>(() => ({
-  texture: 'dirt',
+export const useStore = create<Store>((set) => ({
+  texture: dirtImg,
   cubes: [
     {
       id: nanoid(),
@@ -27,8 +29,26 @@ export const useStore = create<Store>(() => ({
       texture: logImg
     }
   ],
-  addCube: () => {},
-  removeCube: () => {},
+  addCube: (x, y, z) => {
+    set((state) => ({
+      cubes: [
+        ...state.cubes,
+        {
+          id: nanoid(),
+          texture: state.texture,
+          pos: [x, y, z]
+        }
+      ]
+    }))
+  },
+  removeCube: (x, y, z) => {
+    set((state) => ({
+      cubes: state.cubes.filter((cube) => {
+        const [X, Y, Z] = cube.pos
+        return x !== X || y !== Y || z !== Z
+      })
+    }))
+  },
   setTexture: () => {},
   saveWorld: () => {},
   resetWorld: () => {}

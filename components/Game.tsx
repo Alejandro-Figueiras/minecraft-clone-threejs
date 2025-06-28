@@ -20,7 +20,7 @@ const Game = () => {
           <Cubes />
         </Physics>
       </Canvas>
-      <div className='absolute top-[50%] left-[50%] z-40 translate-0.5 text-4xl'>
+      <div className='absolute top-[50%] left-[50%] z-40 -translate-1/2 text-4xl'>
         +
       </div>
     </div>
