@@ -6,10 +6,12 @@ import Ground from './Ground'
 import FirstPointView from './FirstPointView'
 import Player from './Player'
 import { Cubes } from './Cubes'
+import TextureSelect from './TextureSelect'
 
 const Game = () => {
   return (
     <div className='relative h-dvh'>
+      <TextureSelect />
       <Canvas className='h-dvh w-full'>
         <Sky />
         <ambientLight intensity={0.8} />

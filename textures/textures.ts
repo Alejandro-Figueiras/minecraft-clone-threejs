@@ -1,4 +1,5 @@
-export const groundImg = 'textures/grass.jpg'
+export const groundImg = 'textures/ground.jpg'
+export const grassImg = 'textures/grass.jpg'
 export const dirtImg = 'textures/dirt.jpg'
 export const glassImg = 'textures/glass.png'
 export const logImg = 'textures/log.jpg'

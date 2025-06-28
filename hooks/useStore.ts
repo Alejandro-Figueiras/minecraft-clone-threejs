@@ -10,6 +10,7 @@ export type Cube = {
 
 export type Store = {
   texture: string
+  setTexture: (t: string) => void
   cubes: Cube[]
   addCube: (x: number, y: number, z: number) => void
   removeCube: (x: number, y: number, z: number) => void
@@ -17,6 +18,9 @@ export type Store = {
 
 export const useStore = create<Store>((set) => ({
   texture: dirtImg,
+  setTexture: (t) => {
+    set((s) => ({ ...s, texture: t }))
+  },
   cubes: [
     {
       id: nanoid(),
@@ -49,7 +53,6 @@ export const useStore = create<Store>((set) => ({
       })
     }))
   },
-  setTexture: () => {},
   saveWorld: () => {},
   resetWorld: () => {}
 }))
